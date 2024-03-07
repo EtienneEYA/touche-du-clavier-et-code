@@ -1,0 +1,207 @@
+\documentclass[a4paper, 12px]{article}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{tocloft}
+
+
+\geometry{a4paper, margin=2cm}
+
+\begin{document}
+\definecolor{myblue}{RGB}{0, 102, 204}
+\newtcolorbox{mybox}{
+    colframe=myblue,
+    colback=white,
+    arc=0pt,
+    outer arc=0pt,
+    boxrule=1pt,
+    boxsep=0pt,
+    left=10pt,
+    right=10pt,
+    top=10pt,
+    bottom=10pt
+}
+
+\begin{center}
+\Huge  {\bfseries RAPPORT} \\
+
+\begin{mybox}
+\section*{}
+   \bfseries  {\huge THEME : CREATION D'UNE APPLICATION UTILISANT PYGAME POUR AFFICHER LES CODES ET LES TOUCHES SAISIES AU CLAVIER.}
+\\
+\end{mybox}
+
+
+\large REALISE PAR\\
+
+\LARGE EYA ESSAM ETIENNE ERNEST 22P126\\
+
+\end{center}
+
+
+
+\newpage
+
+
+
+\Large {\bfseries \underline{PLAN}\\
+\\
+\normalsize
+
+I.	Introduction\\
+II.	Présentation de Pygame\\
+1.	Présentation de Pygame en tant que bibliothèque de développement de jeux\\
+2.	Explication des principales fonctionnalités de Pygame\\
+III.	Conception de l'application\\
+1.	Description de l'architecture globale de l'application\\
+2.	Explication des différentes étapes de développement\\
+IV.	Implémentation de l'application\\
+1.	Présentation du code source de l'application\\
+2.	Explication des principales fonctionnalités implémentées\\
+3.	Détails sur la gestion des événements clavier\\
+V.	Résultats et fonctionnalités\\
+1.	Présentation de l'interface utilisateur de l'application\\
+2.	Démonstration des fonctionnalités clés de l'application\\
+VI.	Difficultés rencontrées\\
+1.	Description des problèmes techniques rencontrés lors du développement\\
+2.	Solutions adoptées pour résoudre ces problèmes\\
+VII.	Conclusion}\\
+\\
+\\
+\newpage
+
+{\bfseries I. INTRODUCTION}\\
+
+Le présent rapport porte sur la création d'une application utilisant Pygame pour afficher les codes et les touches saisies au clavier. L'objectif de ce projet était de développer une interface interactive permettant de visualiser en temps réel les codes et les touches pressées par l'utilisateur. Cette application peut être utilisée dans divers contextes, tels que l'apprentissage de la programmation ou la démonstration de l'utilisation des touches du clavier dans un jeu.
+Dans ce rapport, nous présenterons tout d'abord une introduction à Pygame en tant que bibliothèque de développement de jeux. Nous expliquerons ensuite la conception de l'application, en décrivant son architecture globale et les différentes étapes de développement. Nous aborderons également l'implémentation de l'application, en présentant le code source et en expliquant les principales fonctionnalités mises en place. Enfin, nous discuterons des résultats obtenus, des difficultés rencontrées et des perspectives d'amélioration de l'application.
+L'objectif de ce rapport est de fournir une vue d'ensemble complète de la création de cette application utilisant Pygame, en mettant l'accent sur les aspects clés du développement et des fonctionnalités implémentées.\\
+\\
+\\
+\\
+\\
+{\bfseries \MakeUppercase{II. Présentation de Pygame} \\
+
+1.	Présentation de Pygame en tant que bibliothèque de développement de jeux\\}
+
+Pygame est une bibliothèque de développement de jeux en Python qui offre des fonctionnalités pour créer des graphismes, gérer les entrées utilisateur (clavier, souris), jouer des sons et gérer la physique des objets. Elle est largement utilisée dans l'industrie du jeu vidéo et est appréciée pour sa simplicité d'utilisation et sa portabilité.
+Pygame est basé sur la bibliothèque SDL (Simple DirectMedia Layer), qui fournit des fonctionnalités de bas niveau pour le rendu graphique, l'audio et les entrées utilisateur. Pygame abstrait ces fonctionnalités de bas niveau et offre une interface plus conviviale pour le développement de jeux.\\
+
+{\bfseries 2. Les principales fonctionnalités de Pygame comprennent :\\
+
+a)	Gestion des fenêtres et des surfaces :} Pygame permet de créer des fenêtres graphiques et de manipuler des surfaces pour dessiner des éléments graphiques.\\
+{\bfseries b)	Gestion des événements :} Pygame permet de gérer les événements utilisateur tels que les clics de souris et les pressions de touches clavier.\\
+{\bfseries c)	Rendu graphique :} Pygame offre des fonctions pour dessiner des formes géométriques, des images et du texte à l'écran.\\
+{\bfseries d)	Gestion du son :} Pygame permet de charger et de jouer des fichiers audio, offrant ainsi la possibilité d'ajouter des effets sonores et de la musique à un jeu ou une application.\\
+{\bfseries e)	Gestion de la physique :} Bien que Pygame ne soit pas une bibliothèque de physique complète, elle offre des fonctionnalités de base pour détecter les collisions entre des objets et gérer la gravité.\\
+
+Pygame est une bibliothèque open-source largement documentée, ce qui facilite son utilisation et son apprentissage pour les développeurs Python. Elle offre une bonne flexibilité et peut être utilisée pour créer des jeux simples ou plus complexes, ainsi que des applications interactives nécessitant des fonctionnalités graphiques avancées.
+\\
+\\
+\\
+\\
+{\bfseries \MakeUppercase{III. Conception de l'application}}\\
+
+L'application que nous avons développée utilise Pygame pour afficher les codes et les touches saisies au clavier. Voici une description de l'architecture globale de l'application et des différentes étapes de développement :\\
+
+{\bfseries 1.	Architecture globale de l'application :}\\
+
+o	Fenêtre graphique : L'application crée une fenêtre graphique à l'aide de Pygame, où les codes et les touches seront affichés.\\
+o	Gestion des événements : L'application utilise les fonctionnalités de gestion des événements de Pygame pour détecter les pressions de touches clavier.\\
+o	Affichage des codes et des touches : Lorsqu'une touche est pressée, l'application affiche le code correspondant et la touche elle-même à l'écran.\\
+
+{\bfseries 2.	Étapes de développement }\\
+
+{\bfseries o	Installation de Pygame :} Nous avons commencé par installer Pygame en utilisant l'outil de gestion des packages de Python, tel que pip.\\
+{\bfseries o	Initialisation de Pygame :} Nous avons créé une fenêtre graphique en utilisant la fonction pygame.init() et en définissant les dimensions et les paramètres de la fenêtre.\\
+{\bfseries o	Gestion des événements clavier :} Nous avons utilisé la boucle principale de l'application pour détecter les événements clavier à l'aide de la fonction pygame.event.get(). Nous avons ensuite vérifié si les événements étaient des pressions de touches et avons récupéré les codes et les touches correspondantes.\\
+{\bfseries o	Affichage des codes et des touches :} Nous avons utilisé la fonction pygame.font.Font() pour définir la police d'écriture à utiliser. Ensuite, nous avons utilisé la fonction pygame.Surface.blit() pour afficher les codes et les touches à l'écran.\\
+
+La conception de l'application a été relativement simple, en utilisant les fonctionnalités de base de Pygame pour la création de la fenêtre graphique, la gestion des événements clavier et l'affichage des éléments à l'écran. La simplicité de Pygame a permis de développer rapidement cette application en se concentrant sur les fonctionnalités principales.
+\\
+\\
+\\
+\\
+\\
+{\bfseries \MakeUppercase{IV. Implémentation de l'application}\\
+\\
+1.	Présentation du code source de l'application}\\
+\\
+L'implémentation de l'application s'est faite en utilisant la bibliothèque Pygame pour créer la fenêtre graphique, gérer les événements clavier et afficher les codes et les touches pressées. Voici une présentation du code source de l'application, des principales fonctionnalités implémentées et de la gestion des événements clavier :
+{\bfseries Code source de l'application :}\\
+
+\includegraphics[scale=0.42]{im0.png}\\
+\includegraphics[scale=0.4]{im2.png}\\
+\includegraphics[scale=0.48]{im3.png}\\
+\\
+
+{\bfseries 2. Principales fonctionnalités implémentées }\\
+\\
+•	Création d'une fenêtre graphique de dimensions 500x400 pixels.\\
+•	Définition d'une police d'écriture pour afficher les codes et les touches.\\
+•	Détection des événements clavier à l'aide de la boucle principale de l'application.\\
+•	Récupération du code et de la touche pressée lorsque l'événement KEYDOWN est détecté.\\
+•	Affichage du code et de la touche à l'écran à l'aide de la fonction pygame.font.render() et pygame.Surface.blit().\\
+\\
+{\bfseries 3. Gestion des événements clavier }\\
+\\
+Dans la boucle principale de l'application, nous utilisons la fonction pygame.event.get() pour récupérer tous les événements survenus depuis la dernière itération de la boucle. Nous vérifions ensuite si l'événement est de type KEYDOWN, ce qui indique qu'une touche a été pressée. Nous récupérons alors le code de la touche à l'aide de event.key et son nom correspondant en utilisant pygame.key.name(). Enfin, nous affichons le code et la touche à l'écran en utilisant la fonction pygame.font.render() pour créer une surface de texte et la fonction pygame.Surface.blit() pour l'afficher à la position souhaitée.
+L'implémentation de l'application est relativement simple, mais elle permet d'obtenir un affichage en temps réel des codes et des touches pressées au clavier.
+\\
+\\
+\\
+{\bfseries \MakeUppercase{V. Résultats et fonctionnalités}}\\
+\\
+L'application que nous avons développée pour afficher les codes et les touches saisies au clavier a été un succès. Voici les résultats obtenus et les fonctionnalités clés de l'application :\\
+
+{\bfseries 1.	Interface utilisateur :}\\
+\\
+o	L'application crée une fenêtre graphique où les codes et les touches pressées sont affichés en temps réel.\\
+o	Les codes et les touches sont affichés en haut à gauche de la fenêtre, dans une police d'écriture claire et lisible.\\
+\\
+{\bfseries 2.	Affichage des codes et des touches :} \\
+\\
+o	Lorsqu'une touche est pressée, l'application récupère automatiquement le code correspondant à la touche et affiche les informations à l'écran.\\
+o	Les codes et les touches sont affichés simultanément, ce qui permet à l'utilisateur de visualiser à la fois le code numérique et la représentation textuelle de la touche.\\
+\\
+{\bfseries 3.	Mise à jour en temps réel :}\\
+\\
+o	L'application met à jour l'affichage à chaque pression de touche, offrant ainsi une expérience interactive en temps réel.\\
+o	À chaque nouvelle pression de touche, les informations précédentes sont effacées et les nouvelles informations sont affichées à leur place.\\
+\\
+{\bfseries 4.	Simplicité d'utilisation :}\\
+\\
+o	L'application est facile à utiliser, sans nécessiter de connaissances préalables en programmation ou en utilisation de Pygame.\\
+o	Les codes et les touches sont affichés de manière claire et concise, ce qui facilite la compréhension pour les utilisateurs.\\
+
+Grâce à l'utilisation de Pygame, nous avons pu développer une application simple mais efficace pour afficher les codes et les touches saisies au clavier. L'application offre une interface utilisateur conviviale et une mise à jour en temps réel, ce qui permet à l'utilisateur de visualiser facilement les informations clés liées aux pressions de touches clavier.
+\\
+\begin{center}
+\includegraphics[scale=0.75]{im4.png}\\
+resultat de l'application
+\end{center}
+
+
+
+
+{\bfseries \MakeUppercase{VI. Difficultés rencontrées}}\\
+\\
+Lors du développement de l'application, nous avons rencontré quelques difficultés spécifiques. Voici les principaux défis auxquels nous avons été confrontés :\\
+{\bfseries 1.	Gestion des événements clavier :} La gestion des événements clavier avec Pygame peut être un peu complexe, car il existe plusieurs types d'événements clavier et il faut les différencier correctement. Nous avons dû comprendre comment détecter l'événement KEYDOWN spécifiquement pour récupérer les pressions de touches.\\
+{\bfseries 2.	Rafraîchissement de la fenêtre :} Pour que les changements apportés à la fenêtre graphique soient visibles, nous devons rafraîchir la fenêtre à chaque itération de la boucle principale. Cependant, si le rafraîchissement est mal géré, cela peut entraîner des problèmes d'affichage ou de performances. Nous avons dû nous assurer de rafraîchir la fenêtre au bon moment et de manière efficace.\\
+{\bfseries 3.	Gestion des polices d'écriture :} L'affichage des codes et des touches nécessite l'utilisation d'une police d'écriture appropriée. Nous avons dû trouver une police adaptée et nous assurer qu'elle était correctement chargée et utilisée dans l'application.\\
+{\bfseries 4.	Compatibilité entre les versions de Pygame :} Pygame peut être sujet à des mises à jour et des changements de comportement entre les versions. Cela peut entraîner des problèmes de compatibilité si le code est écrit pour une version spécifique de Pygame et est exécuté sur une autre version. Nous avons dû nous assurer que notre code fonctionnait correctement avec la version de Pygame que nous utilisions.\\
+Ces difficultés ont été surmontées grâce à la documentation détaillée de Pygame, à la recherche en ligne et à la persévérance. En fin de compte, nous avons pu résoudre ces problèmes et achever le développement de l'application avec succès.
+\\
+\\
+\\
+{\bfseries \MakeUppercase{VII. Conclusion}}\\
+En conclusion, nous avons développé une application utilisant Pygame pour afficher les codes et les touches saisies au clavier. L'application offre une interface utilisateur conviviale, avec un affichage en temps réel des informations clés liées aux pressions de touches. Les principales fonctionnalités de l'application ont été implémentées avec succès, permettant aux utilisateurs de visualiser les codes et les touches pressées de manière claire et concise.
+Nous avons rencontré quelques difficultés lors du développement, notamment dans la gestion des événements clavier, le rafraîchissement de la fenêtre, la gestion des polices d'écriture et la compatibilité entre les versions de Pygame. Cependant, grâce à la documentation de Pygame et à notre persévérance, nous avons pu surmonter ces obstacles et achever le projet.
+Cette application peut être utile dans de nombreux scénarios, tels que la création de jeux, l'enregistrement des entrées clavier pour des analyses ou des simulations, ou simplement pour permettre aux utilisateurs de visualiser les codes correspondants aux touches pressées. Elle peut également servir de point de départ pour des développements plus avancés impliquant la gestion des entrées clavier.
+
+
+
+\end{document}

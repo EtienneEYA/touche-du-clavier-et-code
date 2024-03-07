@@ -1,0 +1,58 @@
+L'objectif de cette application est d'afficher les codes et les touches saisies au clavier en temps réel.
+
+
+I- Fonctionnalités de l'application
+
+L'application offre les fonctionnalités suivantes :
+
+    Affichage des codes des touches : Lorsqu'une touche est enfoncée, le code numérique correspondant est affiché à l'écran.
+
+    Affichage des touches saisies : Lorsqu'une touche est enfoncée, la représentation textuelle de la touche est affichée à l'écran.
+
+    Gestion des événements clavier : L'application utilise les fonctionnalités de gestion des événements clavier de Pygame pour détecter les touches enfoncées.
+
+    Interface utilisateur simple : L'application présente une interface utilisateur minimaliste avec une fenêtre de jeu où les codes et les touches sont affichés.
+
+
+
+II- Installation et exécution de l'application
+
+Pour installer et exécuter l'application, suivez les étapes suivantes :
+
+    Assurez-vous d'avoir Python 3.x installé sur votre système.
+
+    Installez la bibliothèque Pygame en exécutant la commande suivante :
+
+bash
+
+pip install pygame
+
+    Clonez ou téléchargez ce référentiel sur votre machine locale.
+
+    Accédez au répertoire de l'application et exécutez le fichier main.py :
+
+bash
+
+python main.py
+
+    L'application sera lancée et vous pourrez voir la fenêtre de jeu affichant les codes et les touches saisies au clavier. 
+
+
+
+III- Configuration et personnalisation
+
+    Vous pouvez personnaliser l'apparence de l'application en modifiant les paramètres de la fenêtre, la police, la taille, la couleur, etc., dans le fichier main.py.
+
+    Vous pouvez également ajouter des fonctionnalités supplémentaires à l'application en utilisant les autres fonctionnalités de Pygame, telles que le contrôle des sprites, l'affichage d'images, l'ajout de sons, etc.
+
+
+
+VI- Remarques
+
+    Ce rapport est basé sur l'utilisation de la bibliothèque Pygame pour la création d'une application affichant les codes et les touches saisies au clavier. Les résultats peuvent varier en fonction de la version de Pygame utilisée et de la configuration de l'environnement.
+
+    Assurez-vous de consulter la documentation officielle de Pygame pour obtenir des informations détaillées sur l'utilisation de la bibliothèque et pour explorer les fonctionnalités avancées.
+
+    Pour toutes questions, problèmes ou suggestions, veuillez ouvrir une issue dans le référentiel GitHub du rapport.
+
+Nous espérons que ce rapport vous donnera un aperçu complet de la création d'une application utilisant Pygame pour afficher les codes et les touches saisies au clavier. Profitez de l'exploration et de l'expérimentation avec Pygame !
